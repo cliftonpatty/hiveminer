@@ -1,0 +1,43 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Hiveminer"
+run/main_scene="uid://xfj6lpy66wet"
+config/features=PackedStringArray("4.4", "Mobile")
+config/icon="res://icon.svg"
+
+[autoload]
+
+SaveMgmtAuto="*res://scripts/autoloads/save_mgmt_auto.gd"
+GameMgmtAuto="*res://scripts/autoloads/game_mgmt_auto.gd"
+OrderMgmtAuto="*res://scripts/autoloads/order_mgmt_auto.gd"
+NavMgmtAuto="*res://scripts/autoloads/nav_mgmt_auto.gd"
+
+[display]
+
+window/size/viewport_width=1080
+window/size/viewport_height=1920
+window/stretch/mode="viewport"
+window/stretch/aspect="keep_width"
+
+[global_group]
+
+UI=""
+
+[input_devices]
+
+pointing/android/enable_long_press_as_right_click=true
+pointing/emulate_touch_from_mouse=true
+
+[rendering]
+
+renderer/rendering_method="mobile"

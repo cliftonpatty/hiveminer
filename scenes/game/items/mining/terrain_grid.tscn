@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bnolujltf15hy"]
+
+[ext_resource type="Script" uid="uid://bmn4mhr0tcm47" path="res://scenes/game/items/mining/terrain_grid.gd" id="1_dt5cm"]
+
+[node name="TerrainGrid" type="Node2D"]
+script = ExtResource("1_dt5cm")

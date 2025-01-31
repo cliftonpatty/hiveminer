@@ -1,0 +1,76 @@
+[gd_scene load_steps=4 format=3 uid="uid://saqbvt1j0f81"]
+
+[ext_resource type="Script" uid="uid://c8vytk2qg5lt8" path="res://scenes/ui/game_ui.gd" id="1_gwk6t"]
+[ext_resource type="FontVariation" uid="uid://bjpb81vobq58" path="res://assets/fonts/poppins.tres" id="2_xjfbv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xjfbv"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 25
+border_width_top = 25
+border_width_right = 25
+border_width_bottom = 25
+border_color = Color(0.629709, 0.861054, 0.74053, 0.219608)
+
+[node name="GameUi" type="CanvasLayer" groups=["UI"]]
+layer = 10
+script = ExtResource("1_gwk6t")
+
+[node name="Panel" type="Panel" parent="."]
+process_mode = 4
+visible = false
+modulate = Color(0.940258, 0.988255, 7.70092e-07, 1)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xjfbv")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 64
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 21
+
+[node name="OrdersToggle" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer" groups=["UI"]]
+z_index = 99
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_fonts/font = ExtResource("2_xjfbv")
+theme_override_font_sizes/font_size = 32
+toggle_mode = true
+text = "Toggle Orders"
+
+[node name="ClearOrders" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_xjfbv")
+theme_override_font_sizes/font_size = 32
+toggle_mode = true
+text = "X"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer/ClearOrders" to="." method="_on_clear_orders_pressed"]

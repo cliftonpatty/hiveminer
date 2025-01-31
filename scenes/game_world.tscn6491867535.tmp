@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://bk3jmfv5o3k4e"]
+
+[ext_resource type="Script" path="res://scenes/game_world.gd" id="1_0biqy"]
+[ext_resource type="PackedScene" uid="uid://bnolujltf15hy" path="res://scenes/game/items/mining/terrain_grid.tscn" id="2_47u71"]
+[ext_resource type="Script" uid="uid://cmp4bwivgmajw" path="res://scenes/main_cam.gd" id="2_ywgp6"]
+
+[node name="GameWorld" type="Node2D"]
+script = ExtResource("1_0biqy")
+
+[node name="MainCam" type="Camera2D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_ywgp6")
+
+[node name="TerrainGrid" parent="." instance=ExtResource("2_47u71")]

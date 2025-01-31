@@ -1,0 +1,31 @@
+[gd_scene load_steps=7 format=3 uid="uid://bk3jmfv5o3k4e"]
+
+[ext_resource type="Script" path="res://scenes/game_world.gd" id="1_0biqy"]
+[ext_resource type="PackedScene" uid="uid://bnolujltf15hy" path="res://scenes/game/items/mining/terrain_grid.tscn" id="2_47u71"]
+[ext_resource type="PackedScene" uid="uid://saqbvt1j0f81" path="res://scenes/ui/game_ui.tscn" id="2_wbbl4"]
+[ext_resource type="Script" uid="uid://cmp4bwivgmajw" path="res://scenes/main_cam.gd" id="2_ywgp6"]
+[ext_resource type="PackedScene" uid="uid://bll7jg7xtded2" path="res://scenes/ui/order_vizualization.tscn" id="3_6c6v5"]
+[ext_resource type="PackedScene" uid="uid://cagrr5du8kp4l" path="res://scenes/game/characters/base_character.tscn" id="4_0vfqx"]
+
+[node name="GameWorld" type="Node2D"]
+script = ExtResource("1_0biqy")
+
+[node name="MainCam" type="Camera2D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_ywgp6")
+
+[node name="TerrainGrid" parent="." instance=ExtResource("2_47u71")]
+
+[node name="BaseCharacter2" parent="." instance=ExtResource("4_0vfqx")]
+position = Vector2(-38, -40)
+
+[node name="OrderVizualization" parent="." instance=ExtResource("3_6c6v5")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="GameUi" parent="." instance=ExtResource("2_wbbl4")]
+layer = 99

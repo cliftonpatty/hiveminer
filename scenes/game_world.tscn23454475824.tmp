@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://bk3jmfv5o3k4e"]
+
+[ext_resource type="Script" path="res://scenes/game_world.gd" id="1_0biqy"]
+[ext_resource type="PackedScene" uid="uid://bnolujltf15hy" path="res://scenes/game/items/mining/terrain_grid.tscn" id="2_47u71"]
+[ext_resource type="PackedScene" uid="uid://saqbvt1j0f81" path="res://scenes/ui/game_ui.tscn" id="2_wbbl4"]
+[ext_resource type="Script" uid="uid://cmp4bwivgmajw" path="res://scenes/main_cam.gd" id="2_ywgp6"]
+[ext_resource type="PackedScene" uid="uid://cagrr5du8kp4l" path="res://scenes/game/characters/base_character.tscn" id="4_0vfqx"]
+
+[node name="GameWorld" type="Node2D"]
+script = ExtResource("1_0biqy")
+
+[node name="GameUi" parent="." instance=ExtResource("2_wbbl4")]
+
+[node name="MainCam" type="Camera2D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_ywgp6")
+
+[node name="TerrainGrid" parent="." instance=ExtResource("2_47u71")]
+
+[node name="BaseCharacter" parent="." instance=ExtResource("4_0vfqx")]
+position = Vector2(21, -30)
+
+[node name="BaseCharacter2" parent="." instance=ExtResource("4_0vfqx")]
+position = Vector2(-38, -40)
+
+[node name="BaseCharacter3" parent="." instance=ExtResource("4_0vfqx")]
+position = Vector2(11, 39)
+
+[node name="BaseCharacter4" parent="." instance=ExtResource("4_0vfqx")]
+position = Vector2(-27, 35)
+
+[node name="BaseCharacter5" parent="." instance=ExtResource("4_0vfqx")]
+position = Vector2(40, 14)

@@ -1,0 +1,99 @@
+[gd_scene load_steps=12 format=3 uid="uid://cagrr5du8kp4l"]
+
+[ext_resource type="Texture2D" uid="uid://dmg0c0ealwwoq" path="res://assets/sprites/tilesets/pumpkin_dude.png" id="1_8ulkv"]
+[ext_resource type="Script" uid="uid://cb1g4q233cmft" path="res://scenes/game/characters/base_character.gd" id="1_vsen5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vsen5"]
+atlas = ExtResource("1_8ulkv")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6eke5"]
+atlas = ExtResource("1_8ulkv")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d6xa7"]
+atlas = ExtResource("1_8ulkv")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_88iuj"]
+atlas = ExtResource("1_8ulkv")
+region = Rect2(48, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_43si8"]
+atlas = ExtResource("1_8ulkv")
+region = Rect2(64, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7dbr7"]
+atlas = ExtResource("1_8ulkv")
+region = Rect2(80, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lk0ii"]
+atlas = ExtResource("1_8ulkv")
+region = Rect2(96, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g1hls"]
+atlas = ExtResource("1_8ulkv")
+region = Rect2(112, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0mmxd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vsen5")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vsen5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6eke5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d6xa7")
+}],
+"loop": true,
+"name": &"mining",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vsen5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6eke5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d6xa7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_88iuj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_43si8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7dbr7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lk0ii")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g1hls")
+}],
+"loop": true,
+"name": &"running",
+"speed": 15.0
+}]
+
+[node name="BaseCharacter" type="Node2D"]
+script = ExtResource("1_vsen5")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1.375, 1.375)
+sprite_frames = SubResource("SpriteFrames_0mmxd")
+animation = &"idle"
+frame_progress = 0.680528

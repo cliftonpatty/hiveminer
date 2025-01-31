@@ -1,0 +1,6 @@
+[gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://bjpb81vobq58"]
+
+[ext_resource type="FontFile" uid="uid://uvy8l0a4vobf" path="res://assets/fonts/Poppins-Bold.ttf" id="1_vwg35"]
+
+[resource]
+base_font = ExtResource("1_vwg35")
