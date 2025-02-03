@@ -45,14 +45,16 @@ func generate_terrain():
 			var distance = Vector2(x - center_x, y - center_y).length()
 			
 			# Determine cell type based on RNG
-			var cell_type = TerrainCell.CellType.DIRT
+			var cell_type = TerrainCell.CellType.GROUND  # Default is now GROUND instead of DIRT
 			if distance >= STARTING_AREA_SIZE:
 				var rng = randf()
-				if rng < 0.05:
+				if rng < 0.03:
+					cell_type = TerrainCell.CellType.WATERSTONE  # Rarest
+				elif rng < 0.08:
 					cell_type = TerrainCell.CellType.DIAMOND
-				elif rng < 0.1:
-					cell_type = TerrainCell.CellType.GOLD_ORE
-				elif rng < 0.2:
+				elif rng < 0.15:
+					cell_type = TerrainCell.CellType.BLOOD_ORE
+				elif rng < 0.25:
 					cell_type = TerrainCell.CellType.IRON_ORE
 				elif rng < 0.6:
 					cell_type = TerrainCell.CellType.STONE
